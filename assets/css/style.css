@@ -1,0 +1,63 @@
+html, body {
+
+    margin: 0;
+    padding: 0;
+}
+
+.seccion1 {
+  background-image: url(../images/tech.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
+.imag {
+    padding: 20% 2%;
+    
+}
+
+.bg-dark {
+    background-color: transparent !important;
+}
+
+
+.start {
+    text-align: center;
+    color:white;
+
+}
+
+#footer {
+    background: linear-gradient(90deg,#1c3643,#273b47 25%,#1e5372);
+    
+    
+    }
+    
+    #footer a {
+        color: white;
+    
+    }
+
+    .btn-highlight {
+        background-color: #97c93e !important; 
+        color: white;
+    
+    }
+    
+    
+    .btn-highlight:hover {
+        background-color: #82ad36; 
+    }
+
+
+    .bg-light {
+        background-color: white !important;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        background-color: transparent;
+    }
