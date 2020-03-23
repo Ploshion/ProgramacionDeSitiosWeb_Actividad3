@@ -1,11 +1,7 @@
-html, body {
-
-    margin: 0;
-    padding: 0;
-}
 
 .seccion1 {
   background-image: url(../images/tech.jpg);
+  
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -13,14 +9,13 @@ html, body {
 
 }
 
+
 .imag {
     padding: 20% 2%;
     
 }
 
-.bg-dark {
-    background-color: transparent !important;
-}
+
 
 
 .start {
@@ -56,8 +51,4 @@ html, body {
         background-color: white !important;
     }
 
-    a {
-        color: white;
-        text-decoration: none;
-        background-color: transparent;
-    }
+  
