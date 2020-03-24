@@ -42,19 +42,55 @@
           
                 <div class="collapse navbar-collapse"  id="navbarSupportedContent" >
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item ">
-                    <a class="nav-link" href="#Administrador">Administrador </a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#Inventario">Inventario</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#Ventas">Ventas</a>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link" href="#Utilidades">Utilidades</a>
-                    </li>
-                    
+
+                  
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Administrador
+                      </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#Administrador">Administrador</a>
+                    </div>
+                  </div>
+
+
+                  <div class="btn-group">
+                  <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Inventario
+                    </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item " data-target="#modalIngre"  data-toggle="modal" href="#Ingresar_Producto">Ingresar_Producto</a>
+
+                    <a class="dropdown-item " data-target="#modalActua"  data-toggle="modal" href="#Actualizar_Producto">Actualizar_Producto</a>
+
+                    <a class="dropdown-item " data-target="#modalElimi"  data-toggle="modal" href="#Eliminar_Producto">Eliminar_Producto</a>
+
+                    <a class="dropdown-item " data-target="#modalConsu"  data-toggle="modal" href="#Consultar_Producto">Consultar_Producto</a>
+
+                  </div>
+                </div>
+
+
+                <div class="btn-group">
+                  <button type="button" class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ventas
+                    </button>
+                  <div class="dropdown-menu ">
+                    <a class="dropdown-item " data-target="#modalVCanti"  data-toggle="modal" href="#Cantidad_Ventas">Cantidad_Ventas</a>
+                  </div>
+                </div>
+
+                   
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Utilidades
+                      </button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item " data-target="#modalUti1"  data-toggle="modal" href="#Valor_Producto">Valor_Producto</a>
+                         <a class="dropdown-item" data-target="#modalUti2"  data-toggle="modal" href="#Valor_Resistencia">Valor_Resistencia</a>
+                      </div>
+                    </div>
+                   
                 </ul>
                 
                 </div>
@@ -88,9 +124,7 @@
           <small>Sitio web realizado por Carlos Cortes </small>
            
         </div>
-        <div class="col-12">
-           <abbr data-toggle="tooltip" title="Viaja virtualmente y ve todas las maravillas del mundo"></abbr>
-        </div>
+        
       </div>
       <div class="form-row mt-3">
         <div class="form-group col-12 col-sm-6 col-lg-4 offset-lg-2">
@@ -116,6 +150,394 @@
   </section>
 <!--fin de fomulario-->
 
+
+
+<!--Modal-->
+
+
+<!--Modal_Utilidad1-->
+
+
+<div class="modal fade" id="modalUti1" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" ></h5>Calcula Venta y Ganancia</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Valor Compra en pesos:</label>
+              <input type="number" class="form-control" id="vCompra">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Porcentaje Utilidad:</label>
+              <input  type="number" class="form-control" id="pUtilidad">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Porcentaje IVA:</label>
+              <input type="number" class="form-control" id="pIva">
+            </div>
+            <div class="form-group">
+              <p >El valor total de la venta es: </p>
+               <p id="Resu" name="Resu"></p> 
+               <p >El valor de la ganancia es: </p>
+               <p id="Resu2"></p>
+             
+          </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="boton" value="Enviar" onclick="Calc();">Calcular</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--Modal_Utilidad2-->
+
+<div class="modal fade" id="modalUti2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" ></h5>Calcula Venta y Ganancia</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form name="f1" method="POST">
+
+            <div class="form-group">
+              <h4>Banda 1</h4>
+              <select class="custom-select" name="b1">
+                <option value="0" selected>Negro</option>
+                <option value="1">Cafe</option>
+                <option value="2">Rojo</option>
+                <option value="3">Naranja</option>
+                <option value="4">Amarillo</option>
+                <option value="5">Verde</option>
+                <option value="6">Azul</option>
+                <option value="7">Violeta</option>
+                <option value="8">Gris</option>
+                <option value="9">Blanco</option>
+
+              </select>
+            </div>
+
+            <div class="form-group">
+              <h4>Banda 2</h4>
+              <select class="custom-select" name="b2">
+                <option value="0" selected>Negro</option>
+                <option value="1">Cafe</option>
+                <option value="2">Rojo</option>
+                <option value="3">Naranja</option>
+                <option value="4">Amarillo</option>
+                <option value="5">Verde</option>
+                <option value="6">Azul</option>
+                <option value="7">Violeta</option>
+                <option value="8">Gris</option>
+                <option value="9">Blanco</option>
+                
+              </select>
+            </div>
+
+            <div class="form-group">
+              <h4>Banda 3</h4>
+              <select class="custom-select" name="b3">
+                <option value="1" selected>Negro</option>
+                <option value="10">Cafe</option>
+                <option value="100">Rojo</option>
+                <option value="1000">Naranja</option>
+                <option value="10000">Amarillo</option>
+                <option value="100000">Verde</option>
+                <option value="1000000">Azul</option>
+                <option value="10000000">Violeta</option>
+                <option value="100000000">Gris</option>
+                <option value="1000000000">Blanco</option>
+                
+              </select>
+           </div>
+
+            <div>
+              <label for="resultante">Resultado</label>
+          <input type="text" class="form-control" id="b4" name="b4" placeholder=""> 
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+          <button type="button" class="btn btn-primary" id="boton" value="Enviar" onclick="Resist();">Calcular</button>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+<!--Modal_Ingresar-Producto-->
+
+  <div class="modal fade" id="modalIngre" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" ></h5>Ingresar Producto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Código de producto:</label>
+                <input type="number" class="form-control" id="vCompra">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Nombre de producto:</label>
+                <input  type="text" class="form-control" id="pUtilidad">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Marca de Producto</label>
+                <input type="text" class="form-control" id="pIva">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Precio de Compra</label>
+                <input type="number" class="form-control" id="pIva">
+              </div>
+              <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Cantidad Comprada</label>
+                <input type="number" class="form-control" id="pIva">
+              </div>
+          
+              
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" id="boton" value="Enviar"">Guardar Producto</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<!--Modal_Actualizar-Producto-->
+
+
+    <div class="modal fade" id="modalActua" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" ></h5>Actualizar Producto</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Código de producto:</label>
+                  <input type="number" class="form-control" id="vCompra">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Nombre de producto:</label>
+                  <input  type="text" class="form-control" id="pUtilidad">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Marca de Producto</label>
+                  <input type="text" class="form-control" id="pIva">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Precio de Compra</label>
+                  <input type="number" class="form-control" id="pIva">
+                </div>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Cantidad Comprada</label>
+                  <input type="number" class="form-control" id="pIva">
+                </div>
+            
+                
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" id="boton" value="Enviar"">Actualizar Producto</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--Modal_Eliminar-Producto-->
+
+      <div class="modal fade" id="modalElimi" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" ></h5>Eliminar Producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Código de producto:</label>
+                    <input type="number" class="form-control" id="vCompra">
+                  </div>
+                             
+                  
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="boton" value="Enviar"">Eliminar Producto</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--Modal_Consultar-Producto-->
+
+        <div class="modal fade" id="modalConsu" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" ></h5>Consultar Producto</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Código de producto:</label>
+                      <input type="number" class="form-control" id="vCompra">
+                    </div>
+                               
+                    
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary" id="boton" value="Enviar"">Consultar Producto</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+<!--Modal_Cantidad-Ventas-->
+
+          <div class="modal fade" id="modalVCanti" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" ></h5>Ventas</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Código de producto:</label>
+                        <input type="number" class="form-control" id="vCompra">
+                      </div>
+                                
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Valor de Venta:</label>
+                        <input type="number" class="form-control" id="vCompra">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Cantidad de Vendida:</label>
+                        <input type="number" class="form-control" id="vCompra">
+                      </div>
+                      
+                    </form>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+
+<!--Termina-Modal-->
+
+
+<!--JS modal porcentaje de ventas-->
+<script type="text/javascript">
+
+function Calc()
+{
+ var Number1=parseInt(document.getElementById('vCompra').value);
+ var Number2=parseInt(document.getElementById('pUtilidad').value);
+ var Number3=parseInt(document.getElementById('pIva').value);
+ 
+ var vVenta;
+ var vGana;
+ 
+ vVenta=(Number1*Number2/100)+(Number1*Number3/100)+Number1;
+ vGana=(Number1*Number2/100);
+
+
+ 
+ document.getElementById('Resu').innerHTML = vVenta;
+ document.getElementById('Resu2').innerHTML = vGana;
+ 
+  $(".Resu").html(vGana);
+  $(".Resu2").html(vVenta);
+ 
+
+
+
+ 
+}
+
+</script>
+
+<!--JS modal Resistencias-->
+<script>
+
+function Resist() {
+
+var a = document.f1.b1.value;
+var b = document.f1.b2.value;
+var m = document.f1.b3.value;
+var r = document.f1.b4.value;
+r1= a.toString()+b.toString();
+r=parseFloat(r1)*parseFloat(m);
+document.f1.b4.value=r;
+
+
+
+}
+
+
+
+
+</script>
+
+
+
+
+
+
+<!--JS-->
 
 
 
